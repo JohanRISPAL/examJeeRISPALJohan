@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Annonce</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="navBar">
+    <a class="buttonAction" th:href="@{/create}">Ajouter une annonce</a>
+    <a class="buttonAction" th:href="@{/exportPdf}">Exporter les contenus des annonces en pdf</a>
+</div>
+
+<h1>Liste des annonces :</h1>
+<table>
+    <tbody>
+    <tr th:each="annonce: ${annonces}" class="annonceContent">
+        <td><img th:src="@{/img/{image}(image=${annonce.url})}" alt="Il n'y a pas d'image pour cette annonce"></td>
+        <td th:text="${annonce.contenu}"></td>
+        <td>
+            <span class="datePublication">Date de publication : <p th:text="${annonce.publicationDate}"></p></span>
+        </td>
+        <td>
+            <a class="buttonAction" th:href="@{/detail/{annonce}(annonce=${annonce.id})}">Consulter l'annonce</a>
+            <a class="buttonAction" th:href="@{/edit/{annonce}(annonce=${annonce.id})}">Modifier l'annonce</a>
+            <a class="buttonAction" th:href="@{/delete/{annonce}(annonce=${annonce.id})}">Supprimer l'annonce</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

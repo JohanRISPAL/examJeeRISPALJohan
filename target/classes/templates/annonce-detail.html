@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Détail d'une annonce</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet"/>
+</head>
+<body>
+<a class="buttonAction" th:href="@{/}">Liste des annonces</a>
+
+<div class="annonceDetail">
+    <h1 th:text="Annonce + ${annonce.id}"></h1>
+    <img th:src="@{/img/{image}(image=${annonce.url})}" alt="Il n'y a pas d'image pour cette annonce">
+    <p th:text="${annonce.contenu}"></p>
+    <div class="publicationDate">
+        <p>Date de publication : <p th:text="${annonce.publicationDate}"></p></p>
+    </div>
+
+</div>
+</body>
+</html>

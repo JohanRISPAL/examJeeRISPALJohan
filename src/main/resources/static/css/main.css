@@ -1,0 +1,61 @@
+tbody{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.annonceContent{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 2% 5%;
+}
+
+.annonceContent img{
+    width: 100%;
+}
+
+span.datePublication{
+    display: flex;
+}
+
+p{
+    margin: 0 1%;
+}
+
+.buttonAction {
+    box-shadow: 3px 4px 0px 0px #899599;
+    background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+    background-color:#ededed;
+    border-radius:15px;
+    border:1px solid #d6bcd6;
+    display:inline-block;
+    cursor:pointer;
+    color:#3a8a9e;
+    font-family:Arial;
+    font-size:17px;
+    padding:7px 25px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #e1e2ed;
+}
+.buttonAction:hover {
+    background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+    background-color:#bab1ba;
+}
+.buttonAction:active {
+    position:relative;
+    top:1px;
+}
+
+.annonceDetail{
+    text-align: center;
+}
+
+.publicationDate{
+    display: flex;
+    justify-content: center;
+    margin: 5% 0;
+}
+
+.publicationDate p{
+    margin: 0 0.5%;
+}

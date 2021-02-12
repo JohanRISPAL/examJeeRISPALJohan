@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Création annonce</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet"/>
+</head>
+<body>
+<a class="buttonAction" th:href="@{/}">Liste des annonces</a>
+
+<h1>Création d'annonce</h1>
+
+<form  th:object="${annonce}" method="post" enctype="multipart/form-data">
+    <table>
+        <tr>
+            <td>Contenu :</td>
+            <td><input type="text" th:field="*{contenu}"/></td>
+            <td th:if="${#fields.hasErrors('contenu')}" th:errors="*{contenu}">Name Error</td>
+        </tr>
+
+        <tr>
+            <td>Image :</td>
+            <td><input type="file" accept="image/jpeg" name="image" placeholder="Veuillez upload un fichier"></td>
+        </tr>
+
+        <tr>
+            <td><button class="buttonAction" type="submit">Créer !</button></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
